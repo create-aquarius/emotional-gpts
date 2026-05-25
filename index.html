@@ -1735,6 +1735,130 @@
       }
     }
 
+  
+    /* ===== スマホ表示の崩れ・読みにくさ修正 ===== */
+
+    /* 引用ブロックは見出し扱いにしすぎない。長い日本語は中で折れるようにする */
+    .bridge-quote {
+      max-width: 100%;
+      overflow: hidden;
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow-wrap: anywhere;
+      line-break: loose;
+    }
+
+    /* 最後の濃紺sectionは、本文を必ず白系に戻す */
+    .final,
+    .final h2,
+    .final p,
+    .final .note,
+    .final .ps,
+    .final .ps strong {
+      color: #ffffff !important;
+    }
+
+    .final p,
+    .final .note {
+      color: rgba(255,255,255,.86) !important;
+    }
+
+    .final .ps {
+      color: rgba(255,255,255,.88) !important;
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    /* スマホで横はみ出しを起こさないための保険 */
+    body,
+    .page,
+    section,
+    .wrap,
+    .fv-grid,
+    .copy-block,
+    .panel,
+    .bridge-message,
+    .feature-card,
+    .target-card,
+    .offer-box,
+    .profile-card,
+    .final {
+      max-width: 100%;
+    }
+
+    @media (max-width: 540px) {
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      .page {
+        overflow-x: hidden;
+      }
+
+      .section {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .bridge-message {
+        padding-left: 18px;
+        padding-right: 18px;
+        overflow: hidden;
+      }
+
+      .bridge-quote {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 22px 18px;
+        font-size: clamp(20px, 5.8vw, 23px);
+        line-height: 1.6;
+        letter-spacing: .015em;
+      }
+
+      /* 見出し系は意図した改行を守るが、画面外には出さない */
+      .fv h1 span,
+      .headline h2,
+      .navy-band h2,
+      .screen h2,
+      .offer-title h2,
+      .final h2 {
+        max-width: 100%;
+        white-space: normal !important;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+      }
+
+      .lead,
+      .sublead {
+        white-space: normal !important;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .final {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .final h2 {
+        color: #ffffff !important;
+        text-shadow: 0 2px 12px rgba(0,0,0,.2);
+      }
+
+      .final p,
+      .final .note {
+        color: rgba(255,255,255,.88) !important;
+      }
+
+      .final .ps {
+        color: rgba(255,255,255,.9) !important;
+        font-size: 16px;
+        line-height: 1.85;
+      }
+    }
+
   </style>
 </head>
 
@@ -1930,8 +2054,8 @@
 
             <div class="bridge-quote">
               では、そもそも<br>
-              感情設計プロンプトを組み込んだ<br>
-              AIを作ればいい
+              感情設計プロンプトを<br>
+              組み込んだAIを作ればいい
             </div>
 
             <p>
