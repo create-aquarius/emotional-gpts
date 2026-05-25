@@ -1615,6 +1615,126 @@
       }
     }
 
+  
+    /* ===== SL全体を縦読み前提に修正 ===== */
+    .split {
+      grid-template-columns: 1fr !important;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 24px;
+    }
+
+    .panel {
+      width: 100%;
+    }
+
+    /* 通常本文を読みやすくする */
+    body {
+      color: #172033;
+      font-weight: 500;
+    }
+
+    .copy-block,
+    .panel p,
+    .bridge-message p,
+    .feature-card p,
+    .flow-card p,
+    .ba p,
+    .target-card li,
+    details p,
+    .profile-body,
+    .price-copy p,
+    .final p {
+      color: #263148;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 2;
+    }
+
+    .copy-block {
+      max-width: 900px;
+      font-size: 18px;
+    }
+
+    .copy-block p {
+      margin-bottom: 26px;
+    }
+
+    .panel p {
+      margin-bottom: 22px;
+    }
+
+    .feature-card p,
+    .flow-card p,
+    details p {
+      color: #2d374a;
+    }
+
+    .sublead,
+    .note {
+      color: #344055;
+    }
+
+    .quote {
+      color: #10213a;
+      font-size: 18.5px;
+      font-weight: 800;
+    }
+
+    .panel {
+      padding: 38px 42px;
+    }
+
+    .bridge-message {
+      max-width: 900px;
+    }
+
+    .dark-box {
+      max-width: 900px;
+    }
+
+    /* 商品説明エリアのカードが分断されすぎないように */
+    #details .panel {
+      background: #ffffff;
+    }
+
+    #details .spec-grid {
+      margin-bottom: 12px;
+    }
+
+    /* スマホでも本文が細くならないように */
+    @media (max-width: 540px) {
+      .copy-block,
+      .panel p,
+      .bridge-message p,
+      .feature-card p,
+      .flow-card p,
+      .ba p,
+      .target-card li,
+      details p,
+      .profile-body,
+      .price-copy p,
+      .final p {
+        font-size: 16px;
+        line-height: 1.9;
+        font-weight: 500;
+      }
+
+      .copy-block {
+        font-size: 16px;
+      }
+
+      .panel {
+        padding: 26px 20px;
+      }
+
+      .quote {
+        font-size: 16px;
+        line-height: 1.9;
+      }
+    }
+
   </style>
 </head>
 
